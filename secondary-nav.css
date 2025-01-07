@@ -88,6 +88,7 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
 
 [data-wm-plugin="secondary-nav"] .secondary-title {
   font-size: var(--title-size);
+  color: var(--title-color, var(--siteTitleColor));
 }
 
 [data-wm-plugin="secondary-nav"] .secondary-logo img {
