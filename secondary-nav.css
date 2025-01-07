@@ -97,6 +97,7 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
 
 [data-wm-plugin="secondary-nav"] .secondary-links {
   display: flex;
+  flex-wrap: wrap;
 }
 
 [data-wm-plugin="secondary-nav"] .wm-subnav-link {

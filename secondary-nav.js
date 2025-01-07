@@ -51,7 +51,7 @@ class SecondaryNav {
         "lightest-2": "white-bold",
         "light-1": "light",
         "light-2": "light-bold",
-        "bright": "bright-inverse",
+        bright: "bright-inverse",
         "bright-2": "bright",
         "dark-1": "dark",
         "dark-2": "dark-bold",
@@ -67,11 +67,11 @@ class SecondaryNav {
         "dark 2": "dark-bold",
         "darkest 1": "black",
         "darkest 2": "black-bold",
-        "lightest": "white",
-        "light": "light",
-        "dark": "dark",
-        "darkest": "black",
-        "adaptive": "adaptive",
+        lightest: "white",
+        light: "light",
+        dark: "dark",
+        darkest: "black",
+        adaptive: "adaptive",
       };
       this.plugin.dataset.sectionTheme = themes[this.settings.sectionTheme];
     }
@@ -83,15 +83,12 @@ class SecondaryNav {
     const brandingItems = this.el.querySelectorAll(
       "SecondaryTitle, SecondaryLogo"
     );
-    if (brandingItems.length) {
-      this.brandingWrapper = document.createElement("div");
-      this.brandingWrapper = document.createElement("div");
-      this.brandingWrapper.classList.add(
-        "secondary-branding-wrapper",
-        "header-title-text"
-      );
-      this.secondaryWrapper.appendChild(this.brandingWrapper);
-    }
+    this.brandingWrapper = document.createElement("div");
+    this.brandingWrapper.classList.add(
+      "secondary-branding-wrapper",
+      "header-title-text"
+    );
+    this.secondaryWrapper.appendChild(this.brandingWrapper);
 
     this.secondaryLinks = document.createElement("div");
     this.secondaryLinks.classList.add("secondary-links", "header-nav-wrapper");
@@ -250,7 +247,6 @@ class SecondaryNav {
         }
         secondaryTitle.textContent = child.textContent;
         this.brandingWrapper.appendChild(secondaryTitle);
-
       } else if (child.tagName === "SECONDARYLOGO") {
         let secondaryLogo;
         if (child.getAttribute("href")) {
@@ -1624,9 +1620,7 @@ class SecondaryNav {
 
     const headerInner = document.querySelector(".header-inner");
 
-    if (this.brandingWrapper) {
-      const mobileBrandingWrapper = this.brandingWrapper.cloneNode(true);
-    }
+    const mobileBrandingWrapper = this.brandingWrapper.cloneNode(true);
 
     if (desktopPositioning === "top") {
       const dropzone = document.querySelector(".sqs-announcement-bar-dropzone");
