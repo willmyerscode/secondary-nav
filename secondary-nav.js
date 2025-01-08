@@ -34,13 +34,13 @@ class SecondaryNav {
   }
   async init() {
     const self = this;
-    emitEvent("wmSecondaryNav:beforeInit", self);
+    this.emitEvent("wmSecondaryNav:beforeInit", self);
     //  this.data = await this.getData(this.source);
     //  this.navStructure = this.parseNavStructure();
     this.handleMissingColorTheme();
     this.buildStructure();
     this.loadingState = "built";
-    emitEvent("wmSecondaryNav:afterInit", self);
+    this.emitEvent("wmSecondaryNav:afterInit", self);
   }
 
   buildStructure() {
