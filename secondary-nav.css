@@ -78,6 +78,9 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
 .header-announcement-bar-wrapper + [data-wm-plugin="secondary-nav"] {
   z-index: 2;
 }
+[data-wm-plugin="secondary-nav"] + .header-announcement-bar-wrapper + [data-wm-plugin="secondary-nav"] {
+  z-index: 1;
+}
 
 [data-wm-plugin="secondary-nav"] .secondary-wrapper {
   display: flex;

@@ -9,7 +9,7 @@ class SecondaryNav {
     sticky: true,
   };
   static get userSettings() {
-    return window[SecondaryNav.pluginTitle + "Settings"] || {};
+    return window["wmSecondaryNavSettings"] || {};
   }
   constructor(el) {
     this.el = el;
@@ -33,11 +33,14 @@ class SecondaryNav {
     this.init();
   }
   async init() {
+    const self = this;
+    emitEvent("wmSecondaryNav:beforeInit", self);
     //  this.data = await this.getData(this.source);
     //  this.navStructure = this.parseNavStructure();
     this.handleMissingColorTheme();
     this.buildStructure();
     this.loadingState = "built";
+    emitEvent("wmSecondaryNav:afterInit", self);
   }
 
   buildStructure() {
@@ -1801,6 +1804,21 @@ class SecondaryNav {
     if (!isNaN(number) && number.toString() === string) return number;
     return string;
   }
+  emitEvent(type, detail = {}, elem = document) {
+    // Make sure there's an event type
+    if (!type) return;
+  
+    // Create a new event
+    let event = new CustomEvent(type, {
+      bubbles: true,
+      cancelable: true,
+      detail: detail,
+    });
+  
+    // Dispatch the event
+    return elem.dispatchEvent(event);
+  }
+  
 }
 
 (() => {
