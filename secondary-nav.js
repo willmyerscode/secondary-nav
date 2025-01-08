@@ -24,7 +24,6 @@ class SecondaryNav {
     );
 
     this.isSticky = this.settings.sticky && this.settings.desktopPosition === "bottom" && Static.SQUARESPACE_CONTEXT.tweakJSON['tweak-fixed-header'] === 'false';
-    console.log(this.isSticky);
     // this.dataAttribute = this.el.getAttribute("data-attribute");
     // if (this.dataAttribute) {
     //   this.dataAttribute = this.dataAttribute.toLowerCase();
@@ -1545,7 +1544,6 @@ class SecondaryNav {
       mobileButtonLink.textContent = button.textContent;
 
       this.mobileButtonWrapper.appendChild(mobileButtonLink);
-      console.log(this.mobileButtonWrapper);
     });
   }
   setLayout() {
@@ -1595,7 +1593,7 @@ class SecondaryNav {
     this.stickyWrapper.style.height = `${this.plugin.offsetHeight}px`;
     
     // Insert placeholder before the plugin
-    this.plugin.parentNode.insertBefore(this.stickyWrapper, this.plugin);
+    this.plugin.parentNode.insertBefore(this.stickyWrapper, this.plugin.nextSibling);
   
     const handleScroll = () => {
       if (window.pageYOffset > navOffset) {

@@ -311,7 +311,7 @@ body.header--menu-open .header-announcement-bar-wrapper + .secondary-nav.static 
   width: 100%;
 }
 
-.sticky-placeholder {
+.secondary-nav + .sticky-placeholder {
   display: none;
 }
 
