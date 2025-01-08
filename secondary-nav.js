@@ -6,7 +6,7 @@ class SecondaryNav {
     desktopPosition: "top",
     mobilePosition: "overlay-bottom",
     desktopLayout: "nav-right",
-    sticky: true,
+    sticky: false,
   };
   static get userSettings() {
     return window["wmSecondaryNavSettings"] || {};
@@ -23,6 +23,8 @@ class SecondaryNav {
       this.instanceSettings
     );
 
+    this.isSticky = this.settings.sticky && this.settings.desktopPosition === "bottom" && Static.SQUARESPACE_CONTEXT.tweakJSON['tweak-fixed-header'] === 'false';
+    console.log(this.isSticky);
     // this.dataAttribute = this.el.getAttribute("data-attribute");
     // if (this.dataAttribute) {
     //   this.dataAttribute = this.dataAttribute.toLowerCase();
@@ -35,10 +37,9 @@ class SecondaryNav {
   async init() {
     const self = this;
     this.emitEvent("wmSecondaryNav:beforeInit", self);
-    //  this.data = await this.getData(this.source);
-    //  this.navStructure = this.parseNavStructure();
     this.handleMissingColorTheme();
     this.buildStructure();
+    this.addScrollEventListener();
     this.loadingState = "built";
     this.emitEvent("wmSecondaryNav:afterInit", self);
   }
@@ -77,6 +78,11 @@ class SecondaryNav {
         adaptive: "adaptive",
       };
       this.plugin.dataset.sectionTheme = themes[this.settings.sectionTheme];
+    }
+
+    if (this.isSticky) {
+      this.stickyWrapper = document.createElement("div");
+      this.stickyWrapper.classList.add("sticky-placeholder");
     }
 
     this.secondaryWrapper = document.createElement("div");
@@ -1579,6 +1585,35 @@ class SecondaryNav {
     this.root.style.setProperty("--wM-headerHeight", rect.height + "px");
   }
 
+  addScrollEventListener() {
+    if (!this.isSticky) return;
+  
+    // Get initial position of the nav
+    const navOffset = this.plugin.offsetTop;
+    
+    // Set initial height of placeholder
+    this.stickyWrapper.style.height = `${this.plugin.offsetHeight}px`;
+    
+    // Insert placeholder before the plugin
+    this.plugin.parentNode.insertBefore(this.stickyWrapper, this.plugin);
+  
+    const handleScroll = () => {
+      if (window.pageYOffset > navOffset) {
+        this.plugin.classList.add('is-sticky');
+        this.stickyWrapper.style.display = 'block';
+      } else {
+        this.plugin.classList.remove('is-sticky');
+        this.stickyWrapper.style.display = 'none';
+      }
+    };
+  
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check in case page loads scrolled
+    handleScroll();
+  }
+  
   placeNav() {
     // const desktopPositioning = this.el.dataset.desktopPosition || "top";
     // const desktopLayout = this.el.dataset.desktopLayout || "nav-right";
@@ -1807,18 +1842,17 @@ class SecondaryNav {
   emitEvent(type, detail = {}, elem = document) {
     // Make sure there's an event type
     if (!type) return;
-  
+
     // Create a new event
     let event = new CustomEvent(type, {
       bubbles: true,
       cancelable: true,
       detail: detail,
     });
-  
+
     // Dispatch the event
     return elem.dispatchEvent(event);
   }
-  
 }
 
 (() => {

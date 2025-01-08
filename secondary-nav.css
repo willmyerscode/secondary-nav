@@ -300,6 +300,21 @@ body.header--menu-open .header-announcement-bar-wrapper + .secondary-nav.static 
   }
 }
 
+/* Sticky Nav */
+
+.secondary-nav.is-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.sticky-placeholder {
+  display: none;
+}
+
 SecondaryNav {
   display: none;
 }
