@@ -106,7 +106,7 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
   position: relative;
 }
 
-[data-wm-plugin="secondary-nav"] .secondary-link {
+[data-wm-plugin="secondary-nav"] .wm-subnav-link .secondary-link {
   color: var(--link-color);
   font-size: var(--link-size);
 }
