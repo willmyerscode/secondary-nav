@@ -298,9 +298,10 @@ class SecondaryNav {
     link.classList.add("secondary-link");
     link.href = child.getAttribute("href" || "#");
     link.textContent = child.textContent;
-    
+
     // Check if link should open in new tab
-    if (child.getAttribute("target") === "_blank") {
+    if (child.getAttribute("target") === `_blank`) {
+      console.log('working');
       link.target = "_blank";
       link.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
@@ -322,7 +323,7 @@ class SecondaryNav {
     link.href = child.getAttribute("href" || "#");
 
      // Check if link should open in new tab
-    if (child.getAttribute("target") === "_blank") {
+    if (child.getAttribute("target") === `_blank`) {
       link.target = "_blank";
       link.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
@@ -379,7 +380,7 @@ class SecondaryNav {
       link.textContent = item.textContent;
 
        // Check if link should open in new tab
-    if (child.getAttribute("target") === "_blank") {
+    if (child.getAttribute("target") === `_blank`) {
       link.target = "_blank";
       link.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
@@ -491,7 +492,7 @@ class SecondaryNav {
       link.setAttribute("tab-index", "0");
 
        // Check if link should open in new tab
-    if (child.getAttribute("target") === "_blank") {
+    if (child.getAttribute("target") === `_blank`) {
       link.target = "_blank";
       link.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
