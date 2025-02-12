@@ -298,6 +298,12 @@ class SecondaryNav {
     link.classList.add("secondary-link");
     link.href = child.getAttribute("href" || "#");
     link.textContent = child.textContent;
+    
+    // Check if link should open in new tab
+    if (child.getAttribute("target") === "_blank") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer"; // Security best practice for _blank links
+    }
 
     linkWrapper.appendChild(link);
 
@@ -314,6 +320,12 @@ class SecondaryNav {
 
     const link = document.createElement("a");
     link.href = child.getAttribute("href" || "#");
+
+     // Check if link should open in new tab
+    if (child.getAttribute("target") === "_blank") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer"; // Security best practice for _blank links
+    }
 
     const linkContent = document.createElement("div");
     linkContent.classList.add(
@@ -365,6 +377,12 @@ class SecondaryNav {
       link.classList.add("secondary-link", "folder-item-link");
       link.href = item.getAttribute("href" || "#");
       link.textContent = item.textContent;
+
+       // Check if link should open in new tab
+    if (child.getAttribute("target") === "_blank") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer"; // Security best practice for _blank links
+    }
 
       linkWrapper.appendChild(link);
       folder.appendChild(linkWrapper);
@@ -471,6 +489,12 @@ class SecondaryNav {
       link.classList.add("secondary-folder-item-link");
       link.href = item.getAttribute("href" || "#");
       link.setAttribute("tab-index", "0");
+
+       // Check if link should open in new tab
+    if (child.getAttribute("target") === "_blank") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer"; // Security best practice for _blank links
+    }
 
       const linkContent = document.createElement("div");
       linkContent.classList.add(
