@@ -596,7 +596,6 @@ class SecondaryNav {
     this.mobileLoginWrapper.appendChild(this.mobileLoginLink);
   }
   buildSecondarySocialIcons(child) {
-    console.log("building");
     const socialIcons = this.el.querySelector("SecondarySocialIcons");
     if (!socialIcons) return;
 
@@ -607,13 +606,15 @@ class SecondaryNav {
       "header-actions-action--social"
     );
 
-    console.log(socialIcons);
+    const socialIconList = this.el.querySelectorAll(
+      "SecondarySocialLink"
+    );
+    if (!socialIconList.length) return;
 
-    Array.from(socialIcons.children).forEach(child => {
+    Array.from(socialIconList).forEach(child => {
       const href = child.getAttribute("href");
 
       if (href.includes("tiktok.com")) {
-        console.log("tiktok");
         const tiktokIcon = document.createElement("a");
         tiktokIcon.classList.add(
           "secondary-social-icon",
@@ -637,6 +638,7 @@ class SecondaryNav {
       if (href.includes("500px.com")) {
         const fivehundredpxIcon = document.createElement("a");
         fivehundredpxIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -657,6 +659,7 @@ class SecondaryNav {
       if (href.includes("applepodcasts.com")) {
         const podcastIcon = document.createElement("a");
         podcastIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -677,6 +680,7 @@ class SecondaryNav {
       if (href.includes("bandsintown.com")) {
         const bandsintownIcon = document.createElement("a");
         bandsintownIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -697,6 +701,7 @@ class SecondaryNav {
       if (href.includes("behance.com")) {
         const behanceIcon = document.createElement("a");
         behanceIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -717,6 +722,7 @@ class SecondaryNav {
       if (href.includes("codepen.io")) {
         const codepenIcon = document.createElement("a");
         codepenIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -737,6 +743,7 @@ class SecondaryNav {
       if (href.includes("discord.com")) {
         const discordIcon = document.createElement("a");
         discordIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -757,6 +764,7 @@ class SecondaryNav {
       if (href.includes("dribbble.com")) {
         const dribbbleIcon = document.createElement("a");
         dribbbleIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -777,6 +785,7 @@ class SecondaryNav {
       if (href.includes("facebook.com")) {
         const facebookIcon = document.createElement("a");
         facebookIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -797,6 +806,7 @@ class SecondaryNav {
       if (href.includes("flickr.com")) {
         const flickrIcon = document.createElement("a");
         flickrIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -817,6 +827,7 @@ class SecondaryNav {
       if (href.includes("github.com")) {
         const githubIcon = document.createElement("a");
         githubIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -837,6 +848,7 @@ class SecondaryNav {
       if (href.includes("goodreads.com")) {
         const goodreadsIcon = document.createElement("a");
         goodreadsIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -857,6 +869,7 @@ class SecondaryNav {
       if (href.includes("play.google.com")) {
         const googlePlayIcon = document.createElement("a");
         googlePlayIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -877,6 +890,7 @@ class SecondaryNav {
       if (href.includes("houzz.com")) {
         const houzzIcon = document.createElement("a");
         houzzIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -897,6 +911,7 @@ class SecondaryNav {
       if (href.includes("imdb.com")) {
         const imdbIcon = document.createElement("a");
         imdbIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -917,7 +932,7 @@ class SecondaryNav {
       if (href.includes("instagram.com")) {
         const instagramIcon = document.createElement("a");
         instagramIcon.className =
-          "icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline";
+          "secondary-social-icon icon icon--fill header-icon header-icon-border-shape-none header-icon-border-style-outline";
         instagramIcon.href = href;
         instagramIcon.target = "_blank";
         instagramIcon.setAttribute("aria-label", "Instagram");
@@ -931,6 +946,7 @@ class SecondaryNav {
       if (href.includes("linkedin.com")) {
         const linkedinIcon = document.createElement("a");
         linkedinIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -951,6 +967,7 @@ class SecondaryNav {
       if (href.includes("medium.com")) {
         const mediumIcon = document.createElement("a");
         mediumIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -971,6 +988,7 @@ class SecondaryNav {
       if (href.includes("meetup.com")) {
         const meetupIcon = document.createElement("a");
         meetupIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -991,6 +1009,7 @@ class SecondaryNav {
       if (href.includes("pinterest.com")) {
         const pinterestIcon = document.createElement("a");
         pinterestIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1032,6 +1051,7 @@ class SecondaryNav {
       if (href.includes("smugmug.com")) {
         const smugmugIcon = document.createElement("a");
         smugmugIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1052,6 +1072,7 @@ class SecondaryNav {
       if (href.includes("snapchat.com")) {
         const snapchatIcon = document.createElement("a");
         snapchatIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1072,6 +1093,7 @@ class SecondaryNav {
       if (href.includes("soundcloud.com")) {
         const soundcloudIcon = document.createElement("a");
         soundcloudIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1092,6 +1114,7 @@ class SecondaryNav {
       if (href.includes("spotify.com")) {
         const spotifyIcon = document.createElement("a");
         spotifyIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1112,6 +1135,7 @@ class SecondaryNav {
       if (href.includes("stitcher.com")) {
         const stitcherIcon = document.createElement("a");
         stitcherIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1132,6 +1156,7 @@ class SecondaryNav {
       if (href.includes("the-dots.com")) {
         const dotsIcon = document.createElement("a");
         dotsIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1152,6 +1177,7 @@ class SecondaryNav {
       if (href.includes("tidal.com")) {
         const tidalIcon = document.createElement("a");
         tidalIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1172,6 +1198,7 @@ class SecondaryNav {
       if (href.includes("threads.net")) {
         const threadsIcon = document.createElement("a");
         threadsIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1192,6 +1219,7 @@ class SecondaryNav {
       if (href.includes("tripadvisor.com")) {
         const tripadvisorIcon = document.createElement("a");
         tripadvisorIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1212,6 +1240,7 @@ class SecondaryNav {
       if (href.includes("tumblr.com")) {
         const tumblrIcon = document.createElement("a");
         tumblrIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1232,6 +1261,7 @@ class SecondaryNav {
       if (href.includes("twitch.com")) {
         const twitchIcon = document.createElement("a");
         twitchIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1252,6 +1282,7 @@ class SecondaryNav {
       if (href.includes("vevo.com")) {
         const vevoIcon = document.createElement("a");
         vevoIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1272,6 +1303,7 @@ class SecondaryNav {
       if (href.includes("vimeo.com")) {
         const vimeoIcon = document.createElement("a");
         vimeoIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1292,6 +1324,7 @@ class SecondaryNav {
       if (href.includes("vsco.com")) {
         const vscoIcon = document.createElement("a");
         vscoIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1312,6 +1345,7 @@ class SecondaryNav {
       if (href.includes("yelp.com")) {
         const yelpIcon = document.createElement("a");
         yelpIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1332,6 +1366,7 @@ class SecondaryNav {
       if (href.includes("youtube.com")) {
         const youtubeIcon = document.createElement("a");
         youtubeIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1352,6 +1387,7 @@ class SecondaryNav {
       if (href.includes("x.com")) {
         const xIcon = document.createElement("a");
         xIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1372,6 +1408,7 @@ class SecondaryNav {
       if (href.includes("twitter.com")) {
         const twitterIcon = document.createElement("a");
         twitterIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1392,6 +1429,7 @@ class SecondaryNav {
       if (href.includes("mailto:")) {
         const emailIcon = document.createElement("a");
         emailIcon.classList.add(
+          "secondary-social-icon",
           "icon",
           "icon--fill",
           "header-icon",
@@ -1426,7 +1464,7 @@ class SecondaryNav {
     const mobileSocialIcons = this.mobileSocialLinks.querySelectorAll(
       ".secondary-social-icon"
     );
-
+    
     mobileSocialIcons.forEach(icon => {
       icon.classList.add("mobile");
       this.mobileSocialLinkWrapper.appendChild(icon);
