@@ -315,6 +315,10 @@ body.header--menu-open .header-announcement-bar-wrapper + .secondary-nav.static 
   display: none;
 }
 
+.header .secondary-header-menu-nav-folder-content .header-dropdown-icon {
+    display: none;
+}
+
 SecondaryNav {
   display: none;
 }
