@@ -380,7 +380,7 @@ class SecondaryNav {
       link.textContent = item.textContent;
 
        // Check if link should open in new tab
-    if (child.getAttribute("target") === `_blank`) {
+    if (item.getAttribute("target") === `_blank`) {
       link.target = "_blank";
       link.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
