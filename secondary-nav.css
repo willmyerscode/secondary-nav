@@ -246,8 +246,8 @@ body.sqs-edit-mode-active .page-section.secondary-nav-section .content-wrapper >
   justify-content: center;
 }
 [data-wm-plugin="secondary-nav"] .header-layout-nav-only .wm-subnav-link:not(:last-of-type) {
-  margin-left: 0.8vw;
-  margin-right: 0.8vw;
+  margin-left: var(--link-spacing);
+  margin-right: var(--link-spacing);
 }
 
 
