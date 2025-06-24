@@ -232,8 +232,8 @@ body.sqs-edit-mode-active .page-section.secondary-nav-section .content-wrapper >
 }
 
 [data-wm-plugin="secondary-nav"] .header-layout-nav-center .wm-subnav-link {
-  margin-left: 0.8vw;
-  margin-right: 0.8vw;
+  margin-left: var(--link-spacing);
+  margin-right: var(--link-spacing);
 }
 
 [data-wm-plugin="secondary-nav"] .header-layout-nav-center .header-actions {
@@ -245,7 +245,7 @@ body.sqs-edit-mode-active .page-section.secondary-nav-section .content-wrapper >
   width: 100%;
   justify-content: center;
 }
-[data-wm-plugin="secondary-nav"] .header-layout-nav-only .wm-subnav-link:not(:last-of-type) {
+[data-wm-plugin="secondary-nav"] .header-layout-nav-only .wm-subnav-link {
   margin-left: var(--link-spacing);
   margin-right: var(--link-spacing);
 }
