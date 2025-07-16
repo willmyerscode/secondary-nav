@@ -122,11 +122,7 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
   border: var(--dropdown-border);
   visibility: hidden;
   z-index: 4;
-  padding: 0.5em 0;
-}
-
-[data-wm-plugin="secondary-nav"] .secondary-nav-folder-content a {
-  padding: 0 1em;
+  padding: 0.5em 1em;
 }
 
 [data-wm-plugin="secondary-nav"]
@@ -134,6 +130,22 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
   .secondary-nav-folder-content {
   opacity: 1;
   visibility: visible;
+}
+
+[data-wm-plugin="secondary-nav"] .wm-subnav-folder.header-nav-item--active a:not(.folder-item-link) {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 100%;
+    background-position: 0 calc(100% - 0.1em);
+}
+
+[data-wm-plugin="secondary-nav"] .secondary-folder-item.header-nav-folder-item--active a {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    background-position: 0 100%;
+    background-position: 0 calc(100% - 0.1em);
 }
 
 /*Sticky Nav Section*/
