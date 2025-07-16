@@ -420,6 +420,7 @@ class SecondaryNav {
     hiddenSpan.textContent = "Folder:";
 
     const contentSpan = document.createElement("span");
+    contentSpan.classList.add('header-nav-folder-title-text');
     contentSpan.textContent = dropdown.textContent;
 
     const chevronSpan = document.createElement("span");
@@ -1841,7 +1842,34 @@ class SecondaryNav {
     } else if (mobilePositioning === "static") {
       this.plugin.classList.add("static");
     }
+
+    this.setActiveLinks();
   }
+
+  setActiveLinks() {
+  //Add Active Class if on Page
+  let activeClass = 'header-nav-item--active',
+    dropdownActiveClass = 'header-nav-folder-item--active',
+    pathName = window.location.pathname,
+    newLinks = document.querySelectorAll('.secondary-links .header-nav-item');
+
+  newLinks.forEach(link => {
+    let href = link.querySelector('a:not(.header-nav-folder-title)') || link.querySelector('a');
+    if (pathName == href.getAttribute('href')) {
+      link.classList.add(activeClass);
+    }
+  });
+
+  // Handle dropdown items
+  let dropdownItems = document.querySelectorAll('.secondary-links .header-nav-folder-item');
+  dropdownItems.forEach(item => {
+    let href = item.querySelector('a');
+    if (href && pathName == href.getAttribute('href')) {
+      item.classList.add(dropdownActiveClass);
+    }
+  });
+}
+
 
   deepMerge(...objs) {
     function getType(obj) {
