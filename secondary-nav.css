@@ -152,7 +152,7 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
 body:not(.sqs-edit-mode-active) #siteWrapper .page-section.secondary-nav-section{
   position: sticky;
   min-height: 0px;
-  top: var(--wM-headerBottom);
+  top: var(--wM-headerBottom, 0px);
   z-index: 20;
 }
 body:not(.sqs-edit-mode-active) #siteWrapper .page-section.secondary-nav-section .content-wrapper{
