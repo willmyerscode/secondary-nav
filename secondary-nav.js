@@ -1614,7 +1614,7 @@ class SecondaryNav {
       mobileButtonLink.textContent = button.textContent;
 
        // Check if link should open in new tab
-    if (child.getAttribute("target") === `_blank`) {
+    if (button.getAttribute("target") === `_blank`) {
       mobileButtonLink.target = "_blank";
       mobileButtonLink.rel = "noopener noreferrer"; // Security best practice for _blank links
     }
