@@ -283,6 +283,9 @@ body.sqs-edit-mode-active .page-section.secondary-nav-section .content-wrapper >
 body.header--menu-open .header-announcement-bar-wrapper + .secondary-nav.static {
   visibility: hidden;
   opacity: 0;
+  height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
 }
 @media only screen and (max-width: 800px) {
   .secondary-nav:not(.static) {
