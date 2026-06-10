@@ -148,6 +148,10 @@ body:not(.header--menu-open) [data-wm-plugin="secondary-nav"]) .header-announcem
     background-position: 0 calc(100% - 0.1em);
 }
 
+.header-display-mobile .header-title {
+  width: auto;
+}
+
 /*Sticky Nav Section*/
 body:not(.sqs-edit-mode-active) #siteWrapper .page-section.secondary-nav-section{
   position: sticky;
